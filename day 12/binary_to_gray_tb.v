@@ -1,0 +1,32 @@
+module binary_to_gray_tb;
+    reg  [3:0] binary;
+    wire [3:0] gray;
+
+      binary_to_gray u1 (
+        .binary(binary),
+        .gray(gray)
+    );
+
+    initial begin
+        $monitor("Time=%0t Binary=%b Gray=%b", $time, binary, gray);
+
+        binary = 4'b0000; #5;
+        binary = 4'b0001; #5;
+        binary = 4'b0010; #5;
+        binary = 4'b0011; #5;
+        binary = 4'b0100; #5;
+        binary = 4'b0101; #5;
+        binary = 4'b0110; #5;
+        binary = 4'b0111; #5;
+        binary = 4'b1000; #5;
+        binary = 4'b1001; #5;
+        binary = 4'b1010; #5;
+        binary = 4'b1011; #5;
+        binary = 4'b1100; #5;
+        binary = 4'b1101; #5;
+        binary = 4'b1110; #5;
+        binary = 4'b1111; #5;
+        $finish;
+    end
+endmodule
+
